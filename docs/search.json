@@ -93,63 +93,63 @@
   {
     "objectID": "reports/fairness_report.html",
     "href": "reports/fairness_report.html",
-    "title": "Fairness Data report: your title here",
+    "title": "Fairness Data report",
     "section": "",
     "text": "Which question do you ask, and why does it matter? Name the groups (defined by a sensitive attribute, such as sex, race or age) whose outcomes you compare."
   },
   {
     "objectID": "reports/fairness_report.html#question-and-context",
     "href": "reports/fairness_report.html#question-and-context",
-    "title": "Fairness Data report: your title here",
+    "title": "Fairness Data report",
     "section": "",
     "text": "Which question do you ask, and why does it matter? Name the groups (defined by a sensitive attribute, such as sex, race or age) whose outcomes you compare."
   },
   {
     "objectID": "reports/fairness_report.html#data",
     "href": "reports/fairness_report.html#data",
-    "title": "Fairness Data report: your title here",
+    "title": "Fairness Data report",
     "section": "2. Data",
     "text": "2. Data\nSource and APA citation (from your dataset’s card in data/fairness/), what one row represents, and the sample size.\n\n\nCode\nlibrary(tidyverse)\n\n# Read the tidy CSV that your script in scripts/ wrote to data/tidy/\nmy_data &lt;- read_csv(\"../data/tidy/your_file.csv\")"
   },
   {
     "objectID": "reports/fairness_report.html#tidying-summary",
     "href": "reports/fairness_report.html#tidying-summary",
-    "title": "Fairness Data report: your title here",
+    "title": "Fairness Data report",
     "section": "3. Tidying summary",
     "text": "3. Tidying summary\nSummarize in a few sentences which problems you fixed and how; link to your script, for example scripts/01_tidy_fairness.R."
   },
   {
     "objectID": "reports/fairness_report.html#figures",
     "href": "reports/fairness_report.html#figures",
-    "title": "Fairness Data report: your title here",
+    "title": "Fairness Data report",
     "section": "4. Figures",
     "text": "4. Figures\nThree figures comparing the groups. Under each, explain your design choices (geom, mappings, scales, facets, colors). Give each figure fig-cap and fig-alt."
   },
   {
     "objectID": "reports/fairness_report.html#what-the-figures-show",
     "href": "reports/fairness_report.html#what-the-figures-show",
-    "title": "Fairness Data report: your title here",
+    "title": "Fairness Data report",
     "section": "5. What the figures show",
     "text": "5. What the figures show\nDescribe the differences between groups that the figures show. Describe differences, not causes: these data cannot show that belonging to a group causes an outcome."
   },
   {
     "objectID": "reports/fairness_report.html#limitations",
     "href": "reports/fairness_report.html#limitations",
-    "title": "Fairness Data report: your title here",
+    "title": "Fairness Data report",
     "section": "6. Limitations",
     "text": "6. Limitations\nProvenance of the data, small groups (fewer than 30 rows; see your dataset card), and what the data cannot tell us."
   },
   {
     "objectID": "reports/fairness_report.html#references",
     "href": "reports/fairness_report.html#references",
-    "title": "Fairness Data report: your title here",
+    "title": "Fairness Data report",
     "section": "7. References",
     "text": "7. References\nAPA references: the dataset, Fairlearn, and any other sources you used."
   },
   {
     "objectID": "reports/fairness_report.html#ai-use-statement",
     "href": "reports/fairness_report.html#ai-use-statement",
-    "title": "Fairness Data report: your title here",
+    "title": "Fairness Data report",
     "section": "8. AI-use statement",
     "text": "8. AI-use statement\nState whether and how you used AI tools, following the course policy."
   },

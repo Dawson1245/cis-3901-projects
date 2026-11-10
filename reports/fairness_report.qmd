@@ -1,6 +1,6 @@
 ---
-title: "Fairness Data report: your title here"
-author: "Your Name"
+title: "Fairness Data report"
+author: "Dawson Raynes"
 ---
 
 ## 1. Question and context
