@@ -1,0 +1,267 @@
+---
+title: "Guided Project: Statistical Transformations and Coordinate Systems"
+subtitle: "CIS-3901 · Module 12"
+author: "Dawson Raynes"
+date: today
+format:
+  html:
+    toc: true
+    code-fold: false
+    embed-resources: true
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+```{r}
+#| label: project-root
+#| include: false
+# The report runs from reports/; this makes the code run from the project
+# folder, so the script's paths (data/...) work here too.
+knitr::opts_knit$set(root.dir = normalizePath(".."))
+```
+
+```{r}
+#| label: read-script
+#| include: false
+# All the code lives in the script. Each empty chunk below takes the code
+# with that "## ---- name ----" label there, and shows it with its output.
+knitr::read_chunk("scripts/gp12_stats_coords.R")
+```
+
+```{r}
+#| label: setup
+#| include: false
+```
+
+```{r}
+#| label: helpers
+#| include: false
+```
+
+<!--
+How to use this template
+- Replace every line that starts with " " with your own sentences.
+- Replace "Your Name" above (a first name or initials is fine: this page is
+  public).
+- Replace each fig-alt with one sentence describing what YOUR plot shows.
+- Render, then commit and push (Guided Project page, step 5).
+-->
+
+## My data
+
+  The Fairness dataset is the Adult dataset. Each row represents one person, and the data includes information regarding demographics and income. This dataset contains 5000 rows. The dataset came from the 1994 Census database. The Sports dataset contains racing results from the 2023 Boston Marathon. This dataset contains 26598 rows. Each row represents one person who participated in the race, and the data shows information such as age group, gender, finishing time, and placement.
+
+```{r}
+#| label: data
+#| echo: true
+```
+
+## Part A · Fairness
+
+**My group:**   education. **My outcome:**   income
+
+**Question A:**   "Of each education level, what share has income greater than $50000?"
+**Question B:**   "Of everyone with an income greater than $50000, what share is each education level?"
+
+### A0 · My group and my outcome
+
+```{r}
+#| label: a0
+#| echo: true
+```
+
+```{r}
+#| label: a0-check
+#| include: false
+```
+
+### A1 · The rate within each group (question A)
+
+```{r}
+#| label: fig-a1
+#| ref.label: a1
+#| echo: true
+#| fig-cap: "Share of each group with the outcome."
+#| fig-alt: "  The plot compares the proportion of people earning over $50,000 across education levels."
+```
+
+```{r}
+#| label: a1-check
+#| include: false
+```
+
+WRITE (2–3 sentences):My prediction was that people with higher education levels would have higher income rates. The plot shows that prof-school has the highest income rate, followed by Doctors and Masters. Preschool has the lowest, and most of the 1st-12th grades are about the same level at less than 10%. Since each bar represents a proportion of its own group, education levels with different numbers of people can be compared fairly (except for the ones with low sample sizes, like preschool).
+### A2 · Rates with their standard error
+
+```{r}
+#| label: fig-a2
+#| ref.label: a2
+#| echo: true
+#| fig-cap: "Rate in each group, with ± one standard error and the group size."
+#| fig-alt: "  The plot compares income rates across education levels with standard-error ranges and group sample sizes."
+```
+
+```{r}
+#| label: a2-check
+#| include: false
+```
+
+WRITE (2–3 sentences): The Doctorate group has the widest standard-error range, with an SE of 0.0584 and a sample size of 61. A wide range indicates greater uncertainty in the estimated income rate, especially for groups with smaller sample sizes. The plot keeps smaller groups visible by displaying every education group, including those with very few observations, rather than excluding them.
+
+### A3 · Zoom or filter?
+
+```{r}
+#| label: fig-a3
+#| ref.label: a3
+#| echo: true
+#| fig-cap: "Counts per group: from 0, zoomed and filtered."
+#| fig-subcap: ["From 0", "Zoomed", "Filtered"]
+#| fig-alt: "The three plots compare education-group using a zero baseline, a zoomed axis, and a filtered selection."
+#| layout: [[1, 1, 1]]
+```
+
+```{r}
+#| label: a3-check
+#| include: false
+```
+
+The zoomed plot's Lie Factor (largest vs smallest group) is
+`r round(a3_lie_factor, 1)`.
+
+WRITE (3–4 sentences): What does each version show and hide? Explain the Lie
+Factor in your own words. Which version would you publish, and why?
+
+### A4 · Each group's share of everyone with the outcome (question B)
+
+```{r}
+#| label: fig-a4
+#| ref.label: a4
+#| echo: true
+#| fig-cap: "Each group's share of everyone with the outcome."
+#| fig-alt: "  This plot shows each education group's share of people earning more than $50K."
+```
+
+```{r}
+#| label: a4-check
+#| include: false
+```
+
+WRITE (2–3 sentences): Question A and B point in a similar direction since education levels with higher income rates contribute more people earning over $50000. However, question B depends on the number of people belonging to each educational group. Bachelor degrees account for the largest share of everyone earning more than 50000 dollars, at about 27.2%, followed by HS-grad at 22.1%.
+
+## Part B · Sports
+
+**My group, outcome and value:**   The group is age_group, the outcome is whether they finished in the top 100 overall, and the value is finish_net_minutes.
+
+### B0 · My group, outcome and value
+
+```{r}
+#| label: b0
+#| echo: true
+```
+
+```{r}
+#| label: b0-check
+#| include: false
+```
+
+### B1 · The rate within each group
+
+```{r}
+#| label: fig-b1
+#| ref.label: b1
+#| echo: true
+#| fig-cap: "Share of each group with the outcome."
+#| fig-alt: "  The plot compares the proportion of participants finishing in the top 100 across age groups."
+```
+
+```{r}
+#| label: b1-check
+#| include: false
+```
+
+WRITE (2 sentences): The plot shows the proportion of participants in each age group who finished in the top 100 overall. Shares rather than counts allow age groups of different sizes to be compared fairly.
+
+### B2 · A mean with its two spreads
+
+```{r}
+#| label: fig-b2
+#| ref.label: b2
+#| echo: true
+#| fig-cap: "Mean in each group, with ± one standard error and group size."
+#| fig-alt: "  The plot compares mean finishing times across age groups with standard-error ranges and sample sizes."
+```
+
+```{r}
+#| label: b2-check
+#| include: false
+```
+
+```{r}
+#| label: tbl-b2
+#| tbl-cap: "Group size, mean, sd and se."
+#| echo: false
+knitr::kable(b2_summary, digits = 3)
+```
+
+WRITE (2–3 sentences): The 18–39 group had a mean finishing time of approximately 212 minutes, while the 80+ group had a mean of approximately 301 minutes, a difference of 89 minutes. This gap is much larger than either group's standard error, suggesting a substantial difference between the estimated means. The standard deviations (45.4 and 30.1 minutes) show that individual finishing times vary considerably within each group, while the standard errors describe uncertainty in the estimated group means.
+
+### B3 · Zoom or filter?
+
+```{r}
+#| label: fig-b3
+#| ref.label: b3
+#| echo: true
+#| fig-cap: "Counts per group: zoomed and filtered."
+#| fig-subcap: ["Zoomed", "Filtered"]
+#| fig-alt: "  The two plots compare age-group counts using a zoomed axis and a filtered selection."
+#| layout: [[1, 1]]
+```
+
+```{r}
+#| label: b3-check
+#| include: false
+```
+
+WRITE (2–3 sentences): The zoomed plot makes differences between age-group counts appear much larger than they actually are. The filtered plot removes the smallest groups, making the remaining groups easier to compare but hiding information about the excluded groups. The Lie Factor of approximately 5 indicates that the zoomed visualization exaggerates apparent differences by about five times. I would prefer the plot starting at zero because it communicates the differences in group sizes more honestly.
+
+### B4 · Each group's share of everyone with the outcome
+
+```{r}
+#| label: fig-b4
+#| ref.label: b4
+#| echo: true
+#| fig-cap: "Each group's share of everyone with the outcome."
+#| fig-alt: "  The plot shows the share of all top-100 finishers belonging to each age group."
+```
+
+```{r}
+#| label: b4-check
+#| include: false
+```
+
+WRITE (2 sentences): The 18–39 age group accounts for approximately 93% of everyone who finished in the top 100, while the 40–44 age group accounts for approximately 7%. This is different from B1 because B1 measures the rate within each age group, while B4 measures each group's contribution to the overall top-100 population.
+
+## Checks
+
+```{r}
+#| label: checks-table
+#| include: false
+```
+
+```{r}
+#| label: tbl-checks
+#| tbl-cap: "Every task's check, at the time this page was rendered."
+#| echo: false
+knitr::kable(checks_table)
+```
+
+## AI use
+
+  AI Use: None
+
+## References
+
+  Becker, B., & Kohavi, R. (1996). Adult [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5XW20
+Fairlearn. (n.d.). Datasets. https://fairlearn.org/main/user_guide/datasets/index.html
