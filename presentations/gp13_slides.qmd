@@ -1,7 +1,7 @@
+
 ---
-# WRITE: What is this about, and who made it? (a title that names your topic)
-title: "WRITE: your title"
-author: "Your Name"
+title: "Income Differences Across Education Levels"
+author: "Dawson Raynes"
 format:
   revealjs:
     embed-resources: true
@@ -11,29 +11,9 @@ execute:
   message: false
 ---
 
-<!--
-Edit the code in the script. The report and the slides only read it.
-Your words (findings, headlines, limits) live in the report and the slides.
-
-How these slides work
-- The code lives in scripts/gp13_scales_facets.R. No code is pasted here:
-  code typed into a chunk here is ignored on render (the chunk runs the
-  script's code). Fix plots in the script.
-- A plot appears by naming its chunk: copy a figure chunk below and change
-  ref.label to the chunk's name in the script (a1, a2, a3-chosen, a4, a5,
-  b1, b2, b3, b4, b5).
-- At least 4–5 slides; more are welcome. Copy a "##" block to add one.
-- Replace each WRITE: line with your own words, and each fig-alt with one
-  sentence describing YOUR plot.
-- No speaker notes: anything in "::: notes" is public on the web. Keep it
-  out.
--->
-
 ```{r}
 #| label: project-root
 #| include: false
-# The slides run from presentations/; this makes the code run from the
-# project folder, so the script's paths (data/...) work here too.
 knitr::opts_knit$set(root.dir = normalizePath(".."))
 ```
 
@@ -64,54 +44,42 @@ knitr::read_chunk("scripts/gp13_scales_facets.R")
 #|   - b5
 ```
 
-## Task 0: see it update
-
-<!-- Task 0 (kickoff): find your new title word here. You can remove this
-slide after the kickoff. -->
-
-```{r}
-#| label: fig-a0
-#| ref.label: a0
-#| fig-alt: "Bar chart counting the rows in each group of one column."
-```
-
 ## Question
 
-<!-- One sentence, naming the groups you compare. -->
-
-WRITE: your question, naming the groups you compare.
+How does the percentage of people earning above $50K differ across education levels and sex categories?
 
 ## Data
 
-<!-- Where it's from, what one row is, how many rows. -->
+**Fairness dataset:** Adult Income Dataset, originally from the UCI Machine Learning Repository.
 
-WRITE: where the data are from and what one row is. My Fairness file has
-`r scales::comma(nrow(fairness))` rows; my Sports file has
-`r scales::comma(nrow(sports))` rows.
+- Each row represents one person.
+- My Fairness file contains `r scales::comma(nrow(fairness))` rows.
+- The dataset includes information about education, sex, and income.
 
-## WRITE: your headline
+**Sports dataset:** 2023 Boston Marathon Runners Dataset, published by the SCORE Network.
 
-<!-- State the finding in one sentence as this slide's heading, then the
-figure. By default it shows your A3 plot, the version you chose. -->
+- Each row represents one runner who completed the marathon.
+- My Sports file contains `r scales::comma(nrow(sports))` rows.
+
+## Income rates above $50K are higher for men overall
 
 ```{r}
 #| label: fig-headline
 #| ref.label: a3-chosen
-#| fig-alt: "WRITE: one sentence describing what this plot shows."
+#| fig-alt: "A faceted bar chart comparing the percentages earning above $50K across education levels, with separate panels for sex categories and a consistent percentage scale."
 ```
 
 ## What it shows, and its limits
 
-<!-- Differences, not causes; provenance, small groups, what the data can't
-tell us. -->
-
-- WRITE: the difference the figure shows (differences, not causes).
-- WRITE: where the data come from, which groups are small (their n), and
-  what the data can't tell us.
+- The percentage earning above $50K varies across education levels and between sex categories.
+- I used fixed scales so readers can compare percentages directly between panels.
+- Some groups contain very few observations. For example, the female preschool group contains only one person, so its percentage may not be representative.
+- The dataset shows differences between groups, but it cannot establish that education or sex causes those income differences.
 
 ## Sources and AI use
 
-<!-- Data citation; one-line AI statement (or "none"). -->
+Becker, B. & Kohavi, R. (1996). *Adult* [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5XW20
 
-- WRITE: data citation (APA), for each dataset you show.
-- WRITE: "AI use: I used [tool] to [what for]." or "AI use: none."
+Fay, J., Dykstra, A. J., & Ramler, I. (2023, June 27). *2023 Boston Marathon runners* [Dataset]. SCORE Network. https://data.scorenetwork.org/data/boston_marathon_2023.csv
+
+**AI use:** None.

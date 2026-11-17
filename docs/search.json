@@ -338,16 +338,16 @@
   {
     "objectID": "presentations/gp13_slides.html#question",
     "href": "presentations/gp13_slides.html#question",
-    "title": "WRITE: your title",
+    "title": "Income Differences Across Education Levels",
     "section": "Question",
-    "text": "Question\n\nWRITE: your question, naming the groups you compare."
+    "text": "Question\nHow does the percentage of people earning above $50K differ across education levels and sex categories?"
   },
   {
     "objectID": "presentations/gp13_slides.html#data",
     "href": "presentations/gp13_slides.html#data",
-    "title": "WRITE: your title",
+    "title": "Income Differences Across Education Levels",
     "section": "Data",
-    "text": "Data\n\nWRITE: where the data are from and what one row is. My Fairness file has 5,000 rows; my Sports file has 26,598 rows."
+    "text": "Data\nFairness dataset: Adult Income Dataset, originally from the UCI Machine Learning Repository.\n\nEach row represents one person.\nMy Fairness file contains 5,000 rows.\nThe dataset includes information about education, sex, and income.\n\nSports dataset: 2023 Boston Marathon Runners Dataset, published by the SCORE Network.\n\nEach row represents one runner who completed the marathon.\nMy Sports file contains 26,598 rows."
   },
   {
     "objectID": "presentations/gp13_slides.html#write-your-headline",
@@ -359,15 +359,29 @@
   {
     "objectID": "presentations/gp13_slides.html#what-it-shows-and-its-limits",
     "href": "presentations/gp13_slides.html#what-it-shows-and-its-limits",
-    "title": "WRITE: your title",
+    "title": "Income Differences Across Education Levels",
     "section": "What it shows, and its limits",
-    "text": "What it shows, and its limits\n\n\nWRITE: the difference the figure shows (differences, not causes).\nWRITE: where the data come from, which groups are small (their n), and what the data can’t tell us."
+    "text": "What it shows, and its limits\n\nThe percentage earning above $50K varies across education levels and between sex categories.\nI used fixed scales so readers can compare percentages directly between panels.\nSome groups contain very few observations. For example, the female preschool group contains only one person, so its percentage may not be representative.\nThe dataset shows differences between groups, but it cannot establish that education or sex causes those income differences."
   },
   {
     "objectID": "presentations/gp13_slides.html#sources-and-ai-use",
     "href": "presentations/gp13_slides.html#sources-and-ai-use",
-    "title": "WRITE: your title",
+    "title": "Income Differences Across Education Levels",
     "section": "Sources and AI use",
-    "text": "Sources and AI use\n\n\nWRITE: data citation (APA), for each dataset you show.\nWRITE: “AI use: I used [tool] to [what for].” or “AI use: none.”"
+    "text": "Sources and AI use\nBecker, B. & Kohavi, R. (1996). Adult [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5XW20\nFay, J., Dykstra, A. J., & Ramler, I. (2023, June 27). 2023 Boston Marathon runners [Dataset]. SCORE Network. https://data.scorenetwork.org/data/boston_marathon_2023.csv\nAI use: None."
+  },
+  {
+    "objectID": "presentations/gp13_slides.html#income-percentages-differ-across-education-levels-and-sex-categories",
+    "href": "presentations/gp13_slides.html#income-percentages-differ-across-education-levels-and-sex-categories",
+    "title": "Income Differences Across Education Levels",
+    "section": "Income percentages differ across education levels and sex categories",
+    "text": "Income percentages differ across education levels and sex categories\n\n\nFigure 1"
+  },
+  {
+    "objectID": "presentations/gp13_slides.html#income-rates-above-50k-are-higher-for-men-overall",
+    "href": "presentations/gp13_slides.html#income-rates-above-50k-are-higher-for-men-overall",
+    "title": "Income Differences Across Education Levels",
+    "section": "Income rates above $50K are higher for men overall",
+    "text": "Income rates above $50K are higher for men overall\n\n\nFigure 1"
   }
 ]

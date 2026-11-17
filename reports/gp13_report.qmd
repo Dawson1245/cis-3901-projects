@@ -1,7 +1,7 @@
 ---
 title: "Guided Project: Scales and Facets"
 subtitle: "CIS-3901 · Module 13"
-author: "Your Name"
+author: "Dawson Raynes"
 date: today
 format:
   html:
@@ -64,9 +64,7 @@ How to use this template
 
 ## My data
 
-WRITE: Name your Fairness dataset and your Sports dataset. For each: what one
-row is, how many rows, and where the data come from (cite them in
-References).
+My fairness dataset is the Adult Income Dataset. One row is one person, with 5000 total rows. My sports dataset is the Marathon Race Results Dataset. One row is one runner, with 26598 total rows.
 
 ```{r}
 #| label: data
@@ -90,7 +88,7 @@ References).
 #| include: false
 ```
 
-WRITE (1 sentence): Did your title change show up here and in your slides?
+Yes, the updated title appeared in the report and slides.
 
 ### A1 · Label it
 
@@ -99,7 +97,7 @@ WRITE (1 sentence): Did your title change show up here and in your slides?
 #| ref.label: a1
 #| echo: true
 #| fig-cap: "Share of each group with the outcome, labeled for a reader."
-#| fig-alt: "WRITE: one sentence describing what this plot shows."
+#| fig-alt: "A stacked bar chart showing the percentage of people above and below $50K in each education group."
 ```
 
 ```{r}
@@ -107,8 +105,7 @@ WRITE (1 sentence): Did your title change show up here and in your slides?
 #| include: false
 ```
 
-WRITE (2 sentences): Which label did you change most, and why? Could a reader
-understand this plot without you there?
+I changed the x-axis label the most because I wanted to make it clear that the percentages represent income categories within each education group. I think a reader could understand the plot without an explanation because the title, axes, and legend describe what is being compared.
 
 ### A2 · Choose a scale
 
@@ -117,7 +114,7 @@ understand this plot without you there?
 #| ref.label: a2
 #| echo: true
 #| fig-cap: "My scale choice."
-#| fig-alt: "WRITE: one sentence describing what this plot shows."
+#| fig-alt: "A histogram showing the distribution of positive capital gains using a logarithmic x-axis."
 ```
 
 ```{r}
@@ -125,9 +122,7 @@ understand this plot without you there?
 #| include: false
 ```
 
-WRITE (2–3 sentences): Which scale, and why? What does a reader see with it
-that they wouldn't see without it? If values were removed (0 or below on a
-log scale), say how many.
+I used a logarithmic scale for capital gain because most values are small, while some are much larger. Compared with a linear scale, the log scale makes the differences among smaller positive values easier to see. I excluded 4563 zero or negative values because they cannot be displayed on a logarithmic scale.
 
 ### A3 · Facet it: fixed or free
 
@@ -137,7 +132,7 @@ log scale), say how many.
 #| echo: true
 #| fig-cap: "The same rates in panels: fixed and free y-axes."
 #| fig-subcap: ["Fixed", "Free"]
-#| fig-alt: "WRITE: one sentence describing the two plots."
+#| fig-alt: "Two faceted bar charts comparing the percentage earning above $50K across education levels and sex categories, using fixed and free y-axis scales."
 #| layout: [[1, 1]]
 ```
 
@@ -158,9 +153,7 @@ knitr::kable(a3_rates, digits = 3)
 #| include: false
 ```
 
-WRITE (3–4 sentences): Fixed or free? What does the reader gain, and what do
-they lose? Which panels or groups are small, and what is their n? Describe
-differences, not causes.
+I chose fixed scales because they make it easier to compare income percentages between the panels. The reader gains a consistent scale for comparison, but smaller differences within a panel may be harder to see than with free scales. The percentages vary across education levels and between the sex categories. The smallest education-by-sex group, which is preschool-female, has only one observation, so its percentage should be interpreted cautiously.
 
 ### A4 · Compared to what?
 
@@ -169,7 +162,7 @@ differences, not causes.
 #| ref.label: a4
 #| echo: true
 #| fig-cap: "Two groups: individual values and resampled means, same axes."
-#| fig-alt: "WRITE: one sentence describing what this plot shows."
+#| fig-alt: "Two panels comparing individual capital gains and resampled mean capital gains for bachelor's degree holders and high school graduates."
 ```
 
 ```{r}
@@ -177,8 +170,7 @@ differences, not causes.
 #| include: false
 ```
 
-WRITE (2–3 sentences): Do the clouds overlap? What does that say about
-individuals versus the group means?
+The individual values show considerable overlap between the two education groups, with many people having little or no capital gain. The resampled means show how much the average could vary between samples. Comparing the panels helps distinguish differences between individual people from differences between group averages.
 
 ### A5 · Color for every reader
 
@@ -189,7 +181,7 @@ individuals versus the group means?
 #| fig-cap: "My colors, with a second cue, and how a reader with red-green color blindness might see them."
 #| fig-subcap: ["My plot", "Red-green (deuteranopia), simulated"]
 #| fig-alt:
-#|   - "WRITE: one sentence describing what this plot shows."
+#|   - "A bar chart showing the number of people at each education level, separated into panels by sex and distinguished using a viridis color scale."
 #|   - "The same plot in the colors a reader with red-green color blindness (deuteranopia) might see."
 #| layout-ncol: 2
 ```
@@ -216,10 +208,7 @@ individuals versus the group means?
 #| include: false
 ```
 
-WRITE (2–4 sentences): Explain your colors. Say which column you colored by
-and why. If your first choice failed the color check, say what you changed:
-fewer categories, grouping rare ones, or panels. Then look at your simulated
-plot: can you still tell the categories apart?
+I used the sex column for color because it has only a few categories, making the colors easier to distinguish. I chose a viridis color scale to improve accessibility for readers with color-vision differences. I also separated the categories into panels so readers do not have to rely on color alone. In the simulated views, the categories can still be identified using the panel labels.
 
 ## Part B · Sports
 
@@ -230,7 +219,7 @@ plot: can you still tell the categories apart?
 #| ref.label: b1
 #| echo: true
 #| fig-cap: "My Sports plot, labeled for a reader."
-#| fig-alt: "WRITE: one sentence describing what this plot shows."
+#| fig-alt: "A scatter plot showing runners' net finishing times across age groups, with colors representing gender."
 ```
 
 ```{r}
@@ -238,7 +227,7 @@ plot: can you still tell the categories apart?
 #| include: false
 ```
 
-WRITE (2 sentences): What does the plot show? Which label helps a reader most?
+The plot shows how runners' finishing times vary across age groups and gender categories. I think the y-axis label is the most helpful because it explains that finishing times are measured in minutes.
 
 ### B2 · Choose a scale
 
@@ -247,7 +236,7 @@ WRITE (2 sentences): What does the plot show? Which label helps a reader most?
 #| ref.label: b2
 #| echo: true
 #| fig-cap: "My scale choice."
-#| fig-alt: "WRITE: one sentence describing what this plot shows."
+#| fig-alt: "A histogram showing the distribution of runners' overall finishing positions on a logarithmic scale."
 ```
 
 ```{r}
@@ -255,8 +244,7 @@ WRITE (2 sentences): What does the plot show? Which label helps a reader most?
 #| include: false
 ```
 
-WRITE (2–3 sentences): Which scale, and why? If values were removed, say how
-many.
+I used a logarithmic scale for overall finishing position to display a wide range of ranks. This spreads out the lower ranks and compresses the higher ranks, making the earlier finishing positions easier to distinguish. No zero or negative finishing positions were removed.
 
 ### B3 · Facet it: fixed or free
 
@@ -266,7 +254,7 @@ many.
 #| echo: true
 #| fig-cap: "The same plot in panels: fixed and free y-axes."
 #| fig-subcap: ["Fixed", "Free"]
-#| fig-alt: "WRITE: one sentence describing the two plots."
+#| fig-alt: "Two sets of boxplots comparing finishing times across age groups and gender categories, using fixed and free y-axis scales."
 #| layout: [[1, 1]]
 ```
 
@@ -275,9 +263,7 @@ many.
 #| include: false
 ```
 
-WRITE (3–4 sentences): Fixed or free? What does the reader gain, and what do
-they lose? Which panels are small, and what is their n? Differences, not
-causes.
+I chose fixed scales because they allow finishing times to be compared directly between the gender panels. The reader gains a consistent y-axis, although differences within each panel may be less noticeable than with free scales. The boxplots show how finishing times vary across age groups and gender categories. The smaller panel contains 11423 runners, which is important to consider when comparing the groups.
 
 ### B4 · Compared to what?
 
@@ -286,7 +272,7 @@ causes.
 #| ref.label: b4
 #| echo: true
 #| fig-cap: "Two groups: individual values and resampled means, same axes."
-#| fig-alt: "WRITE: one sentence describing what this plot shows."
+#| fig-alt: "Two panels comparing individual finishing times and resampled mean finishing times for male and female runners."
 ```
 
 ```{r}
@@ -294,8 +280,7 @@ causes.
 #| include: false
 ```
 
-WRITE (2–3 sentences): Do the clouds overlap? What does that say about
-individuals versus the group means?
+The individual finishing times show variation within both gender groups, with runners from both groups having overlapping finishing times. The resampled means show how much the average finishing time could vary between samples. This helps distinguish differences between individual runners from differences between the group averages.
 
 ### B5 · Color for every reader
 
@@ -306,7 +291,7 @@ individuals versus the group means?
 #| fig-cap: "My colors, with a second cue, and how a reader with red-green color blindness might see them."
 #| fig-subcap: ["My plot", "Red-green (deuteranopia), simulated"]
 #| fig-alt:
-#|   - "WRITE: one sentence describing what this plot shows."
+#|   - "A horizontal bar chart showing the number of Boston Marathon runners in each gender category, using a viridis color scale."
 #|   - "The same plot in the colors a reader with red-green color blindness (deuteranopia) might see."
 #| layout-ncol: 2
 ```
@@ -333,16 +318,11 @@ individuals versus the group means?
 #| include: false
 ```
 
-WRITE (2–4 sentences): Explain your colors. Say which column you colored by
-and why. If your first choice failed the color check, say what you changed:
-fewer categories, grouping rare ones, or panels. Then look at your simulated
-plot: can you still tell the categories apart?
+I used gender for the fill colors because it has only a few categories, making the colors easier to distinguish. I chose the viridis color scale to improve accessibility for readers with color-vision differences. I also put gender on the y-axis so readers can identify the categories without relying only on color. The categories remain identifiable in the simulated views because of the axis labels.
 
 ## One thing I tried in my slides, and why
 
-WRITE (2–3 sentences): One idea of your own in your slides (an angle, a
-comparison, an order, an annotation), and how it helps a reader see the
-finding.
+I focused my slides on income differences across education levels and sex categories. I used the fixed-scale version of my A3 plot so readers could compare percentages between the panels without having to account for different axis ranges. I also organized the slides so the research question comes before the main finding and the limitations come afterward.
 
 ## Revision log
 
@@ -373,11 +353,10 @@ knitr::kable(checks_table)
 
 ## AI use
 
-WRITE: one public line only: "AI use: I used [tool] to [what for]." or
-"AI use: none." (Your AI log and conversations go in Blackboard, never here:
-Guided Project page.)
+AI Use: None
 
 ## References
 
-WRITE: APA references for your Fairness dataset (Fairlearn and the original
-source) and your Sports dataset (its SCORE page).
+Becker, B. & Kohavi, R. (1996). Adult [Dataset]. UCI Machine Learning Repository. https://doi.org/10.24432/C5XW20
+
+Fay, J., Dykstra, A. J., & Ramler, I. (2023, June 27). 2023 Boston Marathon runners [Data set]. SCORE Network. https://data.scorenetwork.org/data/boston_marathon_2023.csv
